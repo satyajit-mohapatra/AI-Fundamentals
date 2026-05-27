@@ -7,7 +7,7 @@ const videos = data as CourseVideoData[];
 
 export const RemotionRoot = () => {
   return (
-    <Folder name="AI-Course">
+    <Folder name="AI-Fundamentals">
       {videos.map((video) => (
         <Composition
           key={video.id}
