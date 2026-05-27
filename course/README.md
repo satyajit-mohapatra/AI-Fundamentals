@@ -7,6 +7,7 @@ This curriculum expands each listed course item into a short 8-15 minute video-r
 - `01-before-we-start.md` - orientation, setup, course workflow, and cohort logistics
 - `02-getting-to-know-agent-harness.md` - core agent harness usage, terminal flow, IDE flow, shell commands, and permissions
 - `03-day-1-fundamentals.md` - LLM constraints, subagents, exploration, feature work, context, compaction, and handoff
+- `generative-ai-foundations.md` - researched primer on AI, generative AI, LLMs, prompts, context, harnesses, agents, grounding, and risk
 - `04-day-2-steering.md` - repo instructions, steering, progressive disclosure, reusable workflows, and memory
 - `05-day-3-planning.md` - massive tasks, PRDs, multi-phase plans, tracer bullets, execution, and user questions
 - `06-day-4-feedback-loops.md` - feedback loops, reusable workflows, pre-commit, and red-green-refactor
@@ -53,4 +54,4 @@ The app is designed to make the course concrete:
 - It is structured enough to support tests, pre-commit, and architecture review.
 - It is familiar enough that students can focus on the AI coding workflow rather than domain confusion.
 
-Start with `tool-agnostic-agent-harness-guide.md`, then use `sample-app-courseforge.md` and `student-workbook.md` for module tasks.
+Start with `generative-ai-foundations.md` and `tool-agnostic-agent-harness-guide.md`, then use `sample-app-courseforge.md` and `student-workbook.md` for module tasks.

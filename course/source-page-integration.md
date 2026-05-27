@@ -1,8 +1,10 @@
 # Source Page Integration Notes
 
-Source page reviewed: https://www.aihero.dev/cohorts/ai-coding-for-real-engineers-m0k0w
+Source page reviewed and used as a course reference: https://www.aihero.dev/cohorts/ai-coding-for-real-engineers-m0k0w
 
 These notes translate the page into course design decisions for this local curriculum. They are intentionally paraphrased and adapted into original teaching material.
+
+See also `generative-ai-foundations.md` for the researched technical primer that defines AI, generative AI, LLMs, prompts, context, harnesses, agents, grounding, and risk for students before they start the coding-agent workflow.
 
 ## Positioning To Carry Through The Course
 
