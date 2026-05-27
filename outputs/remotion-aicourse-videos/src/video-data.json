@@ -1,0 +1,1531 @@
+[
+  {
+    "id": "01-before-we-start",
+    "title": "01 - Before We Start: Detailed Video Scripts",
+    "subtitle": "Script-driven draft video. Available from May 18, 2026.",
+    "sourceFile": "01-before-we-start-script.md",
+    "fps": 12,
+    "width": 1920,
+    "height": 1080,
+    "durationInFrames": 6780,
+    "chapters": [
+      {
+        "title": "1. Where We're Going",
+        "target": "10-12 minutes, talking head plus course-map slides and one terminal/diff preview.",
+        "onScreenText": "Goal -> Context -> Plan -> Execute -> Verify -> Review -> Handoff",
+        "screenDirection": "Show a simple course roadmap. Then show a final example task summary with sections: Goal, Files changed, Checks run, Risks, Next step.",
+        "demoSteps": [
+          "Open a sample final handoff note.",
+          "Point to the changed files list.",
+          "Point to checks run.",
+          "Point to a remaining risk or follow-up."
+        ],
+        "exercisePrompt": "Write one sentence: what do you want AI coding to improve in your workflow? Then write one thing you do not want to give up control over.",
+        "recap": "The goal is not to make the agent independent. The goal is to make the work controlled, visible, and faster.",
+        "beats": [
+          "Most developers do not fail with AI coding because the model is useless. They fail because they treat the model like a magic box. This course is about something more practical: building a workflow where an AI coding agent can help you move faster without taking control away from you.",
+          "By the end of this course, you should be able to take a real repo task, shape it, give it to an agent, review what happened, run verification, and hand off the result. You will not just learn commands. You will learn a working system.",
+          "setup, agent harness basics, fundamentals, steering, planning, feedback loops, AFK agents, and human-in-the-loop patterns. Emphasize that each day adds a control layer and works across terminal-based agents, CLI agents, IDE agents, hosted agent apps, and similar tools.",
+          "shape the task, inspect the repo, choose HITL or AFK, execute a small slice, verify, review, summarize, and continue.",
+          "This is not a prompt-hacking course. It is not a replacement for engineering judgment. It is not about generating the most code. It is about getting useful, reviewable, verified work."
+        ],
+        "from": 0,
+        "duration": 840
+      },
+      {
+        "title": "2. Navigating The Discord",
+        "target": "8-10 minutes, screen recording of Discord structure or a mock community layout.",
+        "onScreenText": "Goal. Context. Tried. Output. Expected. Question.",
+        "screenDirection": "Show a mock help post. Highlight each required part with callouts.",
+        "demoSteps": [
+          "Start with a weak post: \"Migration failed. Help?",
+          "Rewrite it with exact command, error, environment, and question.",
+          "Show how the improved version invites a useful answer."
+        ],
+        "exercisePrompt": "Create a help-request template you can reuse during the course.",
+        "recap": "Good community questions are not longer. They are easier to reproduce.",
+        "beats": [
+          "'It does not work.' The fastest way to get helped is to make the problem easy to understand.",
+          "Explain that learners will use Discord for debugging, feedback, office-hour prep, sharing prompts, and comparing workflows.",
+          "Walk through announcements, help, cohort chat, office hours, project sharing, and wins. Tell learners where to ask setup questions versus workflow questions.",
+          "goal, context, command or prompt used, exact output, what you expected, and the precise question.",
+          "Explain why huge pasted logs, screenshots without text, vague complaints, and missing repo context slow everyone down."
+        ],
+        "from": 840,
+        "duration": 840
+      },
+      {
+        "title": "3. Repo Setup",
+        "target": "12-15 minutes, terminal-heavy setup walkthrough.",
+        "onScreenText": "A working baseline beats a confident guess.",
+        "screenDirection": "Terminal on left, setup notes on right.",
+        "demoSteps": [
+          "Confirm current directory.",
+          "List files.",
+          "Install dependencies.",
+          "Run one baseline check.",
+          "Write setup notes."
+        ],
+        "exercisePrompt": "Create SETUP_NOTES.md with the commands that worked on your machine and any failures you hit.",
+        "recap": "Before you ask an agent to change code, make sure both of you know how to tell whether the repo still works.",
+        "beats": [
+          "If the repo does not run locally, the agent is not coding. It is guessing.",
+          "dependencies installed, local commands understood, and at least one verification command passing or failing for a known reason.",
+          "source, tests, docs, scripts, migrations, config, package or lock files.",
+          "Run or describe the install command. Explain that learners should capture versions and errors.",
+          "Run lint, test, typecheck, or app start command. Explain each result."
+        ],
+        "from": 1680,
+        "duration": 840
+      },
+      {
+        "title": "4. Database Migrations",
+        "target": "10-13 minutes, conceptual explanation plus local migration demo.",
+        "onScreenText": "Schema change = code risk + data risk",
+        "screenDirection": "Show migrations folder, a sample migration, and schema diff or DB inspection command.",
+        "demoSteps": [
+          "Open an existing migration.",
+          "Run local migration command.",
+          "Inspect resulting table/schema.",
+          "Draft a migration prompt with safety constraints."
+        ],
+        "exercisePrompt": "Write a migration safety checklist with current schema, desired change, rollback, and verification.",
+        "recap": "The agent can help with migrations, but the human owns the data risk.",
+        "beats": [
+          "A bad code change can often be reverted. A bad database migration may have already changed the data.",
+          "Explain schema evolution as ordered, repeatable changes to database structure or data.",
+          "Show timestamp/name, up/down or apply/rollback, schema changes, and seed/data migrations.",
+          "Demonstrate running migrations locally and checking the result.",
+          "inspect existing models and migrations, propose shape, call out compatibility risks, do not run production changes."
+        ],
+        "from": 2520,
+        "duration": 840
+      },
+      {
+        "title": "5. Setting Up Your Agent Harness For The Course",
+        "target": "12-15 minutes, agent harness terminal setup.",
+        "onScreenText": "First task: inspect. Second task: plan. Third task: edit.",
+        "screenDirection": "Terminal or IDE agent session, then editor showing repo files.",
+        "demoSteps": [
+          "Open your chosen agent harness in the repo.",
+          "Ask for repo summary with no edits.",
+          "Ask for setup commands.",
+          "Review its answer against files."
+        ],
+        "exercisePrompt": "Save your default first prompt for a new codebase.",
+        "recap": "Start every agent relationship with orientation, not action.",
+        "beats": [
+          "Your first agent harness task should not be 'build my feature.' It should be 'show me you understand the repo.'",
+          "The chosen harness should be authenticated or configured, launched in the right repo, and able to inspect files safely.",
+          "Show current working directory and explain why launching from the wrong folder poisons the session.",
+          "Inspect this repo and tell me how to run it. Do not edit files.",
+          "Explain how different harnesses ask for approval, or how the human can enforce approval manually when the tool has weaker permission controls."
+        ],
+        "from": 3360,
+        "duration": 840
+      },
+      {
+        "title": "6. How To Take This Course",
+        "target": "8-12 minutes, talking head plus note-taking demo.",
+        "onScreenText": "Watch -> Practice -> Review -> Capture",
+        "screenDirection": "Show a Markdown course journal being filled out.",
+        "demoSteps": [
+          "Create a course journal entry.",
+          "Add prompt used.",
+          "Add result and mistake.",
+          "Add one new rule."
+        ],
+        "exercisePrompt": "Choose your practice repo and create your first course journal entry.",
+        "recap": "The notes you write during failures will become your best agent instructions later.",
+        "beats": [
+          "Watching this course will not change your workflow. Practicing the loops will.",
+          "Watch, pause, run, review, write a note.",
+          "lesson, prompt used, result, mistake, new rule.",
+          "Recommend using the same repo so lessons compound.",
+          "Pause before running commands, before approving edits, after failing checks, and before accepting a summary."
+        ],
+        "from": 4200,
+        "duration": 840
+      },
+      {
+        "title": "7. Office Hours",
+        "target": "8-10 minutes, structured question-prep demo.",
+        "onScreenText": "Context. Evidence. Decision needed.",
+        "screenDirection": "Show a messy question being rewritten into a clear office-hours prompt.",
+        "demoSteps": [
+          "Write a messy stuck-point paragraph.",
+          "Extract context, evidence, and ask.",
+          "Produce a 90-second office-hours question."
+        ],
+        "exercisePrompt": "Prepare one office-hours question using context, evidence, and decision needed.",
+        "recap": "The clearer your question, the more useful the answer.",
+        "beats": [
+          "Office hours are most useful when you bring evidence, not just confusion.",
+          "Explain that office hours are for stuck points, workflow review, task shaping, and decision support.",
+          "Current goal, repo state, prompt used, command output, error, expected result, and specific ask.",
+          "Is this scoped well?\", \"What verification is missing?\", \"Should this be HITL or AFK?\", \"Where is the review gate?",
+          "What should I build?\", \"Why is everything broken?\", or anything without evidence."
+        ],
+        "from": 5040,
+        "duration": 840
+      },
+      {
+        "title": "8. Appendix: Cohort 003 -> Cohort 004 Changelog",
+        "target": "8-12 minutes, changelog walkthrough.",
+        "onScreenText": "Current workflow wins over old notes.",
+        "screenDirection": "Show a sample changelog table with \"old guidance,\" \"new guidance,\" and \"why changed.",
+        "demoSteps": [
+          "Show one old workflow.",
+          "Show the updated workflow.",
+          "Explain the reason for the change."
+        ],
+        "exercisePrompt": "If you have prior notes, mark anything that may be outdated. If not, write one question you have about the course evolution.",
+        "recap": "The course will keep improving. Your workflow should too.",
+        "beats": [
+          "A changelog is not trivia. It tells you what the course learned from previous learners.",
+          "Explain that tools, workflows, and course emphasis changed between cohorts.",
+          "New lessons, renamed workflows, removed advice, updated commands, and improved exercises.",
+          "If old Discord posts conflict with the current lesson, prefer the current lesson unless an instructor says otherwise.",
+          "Ask them to mark old notes that need updating."
+        ],
+        "from": 5880,
+        "duration": 840
+      }
+    ]
+  },
+  {
+    "id": "02-getting-to-know-agent-harness",
+    "title": "02 - Getting To Know Your Agent Harness: Detailed Video Scripts",
+    "subtitle": "Script-driven draft video. Available from May 18, 2026.",
+    "sourceFile": "02-getting-to-know-agent-harness-script.md",
+    "fps": 12,
+    "width": 1920,
+    "height": 1080,
+    "durationInFrames": 5940,
+    "chapters": [
+      {
+        "title": "1. Intro",
+        "target": "8-10 minutes, terminal intro plus simple slides.",
+        "onScreenText": "Agent harness = repo context + tools + review loop",
+        "screenDirection": "Open your chosen agent harness in a repo. Ask for repo organization with no edits.",
+        "demoSteps": [
+          "Launch your chosen agent harness in a repo.",
+          "Ask: \"Inspect this project and tell me how it is organized. Do not edit files.",
+          "Review the response as orientation, not truth."
+        ],
+        "exercisePrompt": "Run or write your first repo-safe prompt. It should ask for inspection only and forbid edits.",
+        "recap": "An agent harness becomes useful when you pair its speed with your review loop.",
+        "beats": [
+          "An agent harness is not just a chatbot that knows programming. It is a repo-aware collaborator that can inspect files, run commands, make edits, and explain what changed.",
+          "Explain that the value comes from connecting language, local files, shell commands, and review.",
+          "Ask, inspect, approve, run, review, continue.\" Walk through each word and what the learner does.",
+          "Session management, terminal prompting, IDE integration, moving through history, bash commands, and permissions.",
+          "The agent can propose and execute, but you own the repo, the review, and the decision to ship."
+        ],
+        "from": 0,
+        "duration": 840
+      },
+      {
+        "title": "2. Managing Your Agent Session",
+        "target": "10-13 minutes, live terminal session.",
+        "onScreenText": "Path. Goal. Scope. State. Next step.",
+        "screenDirection": "Show a session start checklist in one pane and terminal in another.",
+        "demoSteps": [
+          "Run pwd or equivalent.",
+          "Ask the agent to summarize repo context.",
+          "Redirect it to one folder.",
+          "Ask for a session summary."
+        ],
+        "exercisePrompt": "Create a session-start checklist with path, goal, scope, git state, and first safe prompt.",
+        "recap": "A focused session gives the agent fewer chances to guess.",
+        "beats": [
+          "An agent session is not just a conversation. It is the working memory for the task.",
+          "Confirm current directory, repo name, branch, and task. Explain that the wrong starting directory causes wrong assumptions.",
+          "goal, scope, files inspected, commands run, decisions, and open questions.",
+          "When the agent drifts, restate the task and current facts instead of restarting emotionally.",
+          "Use a new session for unrelated tasks, polluted context, wrong repo, or a major direction change."
+        ],
+        "from": 840,
+        "duration": 840
+      },
+      {
+        "title": "3. Prompting In The Terminal",
+        "target": "12-15 minutes, prompt rewrite workshop.",
+        "onScreenText": "Goal + Scope + Constraints + Done",
+        "screenDirection": "Show a table with weak prompt, problem, stronger prompt.",
+        "demoSteps": [
+          "Type a vague request.",
+          "Predict likely bad behavior.",
+          "Rewrite it with four parts.",
+          "Send the improved prompt."
+        ],
+        "exercisePrompt": "Rewrite three prompts from your own work using goal, scope, constraints, and done condition.",
+        "recap": "The agent can only optimize for success if you define success.",
+        "beats": [
+          "A prompt is a task contract. If the contract is vague, the agent fills in the blanks.",
+          "Teach goal, scope, constraints, and done condition. Give a one-sentence example of each.",
+          "Rewrite \"fix the login bug\" into \"reproduce the failing login test, identify the smallest cause, patch only auth files unless evidence requires otherwise, and run the targeted test.",
+          "Explain explore-only, plan-only, edit, review, debug, and verify prompts. Each mode produces a different kind of output.",
+          "Show how to paste or reference a command failure and ask the agent to reason from the evidence."
+        ],
+        "from": 1680,
+        "duration": 840
+      },
+      {
+        "title": "4. Your Agent Harness And Your IDE",
+        "target": "10-12 minutes, split screen terminal and IDE.",
+        "onScreenText": "Agent executes. IDE reviews.",
+        "screenDirection": "Split terminal and IDE diff view. Use callouts on changed files and review notes.",
+        "demoSteps": [
+          "Ask the agent where a behavior lives.",
+          "Open identified files.",
+          "Review one diff.",
+          "Send one correction."
+        ],
+        "exercisePrompt": "Review one agent change in your IDE and write one risk before accepting the summary.",
+        "recap": "The IDE is not replaced by the agent. It becomes your control panel.",
+        "beats": [
+          "The agent can move quickly, but your IDE is where you should slow down and inspect.",
+          "The agent searches, explains, edits, and runs commands. The IDE helps you navigate, compare diffs, inspect symbols, and review.",
+          "Ask the agent to identify relevant files, then open them yourself.",
+          "Show changed lines, surrounding code, tests, and possible side effects.",
+          "Keep the behavior change, but revert the unrelated style cleanup."
+        ],
+        "from": 2520,
+        "duration": 840
+      },
+      {
+        "title": "5. Going Forwards And Backwards In Time",
+        "target": "10-13 minutes, git and diff workflow.",
+        "onScreenText": "Checkpoint before risk. Inspect before continue.",
+        "screenDirection": "Terminal with git status and IDE diff.",
+        "demoSteps": [
+          "Make a tiny change.",
+          "Inspect status and diff.",
+          "Create a checkpoint or note.",
+          "Show how to revert that one change intentionally."
+        ],
+        "exercisePrompt": "Write your checkpoint rule: when will you commit, stash, or stop for review?",
+        "recap": "If you can inspect and recover, you can let agents move faster without losing control.",
+        "beats": [
+          "Agent work can move faster than your memory. Time travel keeps that speed from becoming chaos.",
+          "Introduce git status, diff views, commits, branches, stashes, editor undo, and session summaries.",
+          "Show how to look at what changed before giving another instruction.",
+          "Explain why known-good states matter before broad changes, migrations, or refactors.",
+          "Accept small verified changes, then continue with the next bounded step."
+        ],
+        "from": 3360,
+        "duration": 840
+      },
+      {
+        "title": "6. Running Bash Commands",
+        "target": "12-15 minutes, terminal command workflow.",
+        "onScreenText": "Read. Search. Test. Verify. Be careful with irreversible commands.",
+        "screenDirection": "Terminal with commands and a side note listing command categories.",
+        "demoSteps": [
+          "Run a search command.",
+          "Run a targeted test.",
+          "Inspect failure output.",
+          "Ask the agent for the next smallest diagnostic command."
+        ],
+        "exercisePrompt": "List five commands you are comfortable approving and five that require explicit review.",
+        "recap": "Bash is where claims become checkable.",
+        "beats": [
+          "Commands turn the agent's story into evidence.",
+          "Show read-only inspection, search, targeted tests, lint, typecheck, and local app startup.",
+          "Deletion, resets, network installs, migrations, production commands, credential access, and anything irreversible.",
+          "Ask the agent to run or suggest a search command and summarize what it proves.",
+          "Run a failing test or mocked failure. Ask the agent to reason from actual output."
+        ],
+        "from": 4200,
+        "duration": 840
+      },
+      {
+        "title": "7. Permissions",
+        "target": "10-13 minutes, permission decision examples.",
+        "onScreenText": "What will it touch? Why now? What could go wrong?",
+        "screenDirection": "Show a permission request example and annotate the decision.",
+        "demoSteps": [
+          "Show broad permission request.",
+          "Ask the agent to narrow it.",
+          "Approve the narrow action.",
+          "Record the policy in course notes."
+        ],
+        "exercisePrompt": "Write approval rules for network access, destructive commands, migrations, and broad file edits.",
+        "recap": "Good permissions let the agent help while keeping irreversible decisions with you.",
+        "beats": [
+          "Permission prompts are not friction. They are your chance to control blast radius.",
+          "File reads, file writes, shell commands, network access, browser access, credentials, and external services.",
+          "Compare reading a local file with deleting generated files, installing packages, running migrations, or calling production APIs.",
+          "What will it touch? Why is it needed? What could go wrong? Is there a narrower alternative?",
+          "Demonstrate denying \"run setup\" and approving \"run the test command from package.json."
+        ],
+        "from": 5040,
+        "duration": 840
+      }
+    ]
+  },
+  {
+    "id": "03-day-1-fundamentals",
+    "title": "03 - Day 1 Fundamentals: Detailed Video Scripts",
+    "subtitle": "Script-driven draft video. Available from June 1, 2026.",
+    "sourceFile": "03-day-1-fundamentals-script.md",
+    "fps": 12,
+    "width": 1920,
+    "height": 1080,
+    "durationInFrames": 8460,
+    "chapters": [
+      {
+        "title": "1. The Constraints Of LLMs",
+        "target": "12-15 minutes, concept lesson with side-by-side prompt comparison.",
+        "onScreenText": "Fluent is not correct. Evidence beats confidence.",
+        "screenDirection": "Ask a repo question without context, then ask again after inspecting files. Compare the answer quality.",
+        "demoSteps": [
+          "Ask a vague implementation question.",
+          "Inspect relevant files.",
+          "Ask again with file context.",
+          "Run or show one check that confirms a claim."
+        ],
+        "exercisePrompt": "List three things an agent should verify before changing a real repo.",
+        "recap": "LLMs are useful because they are fast and flexible. They become reliable when your process forces evidence.",
+        "beats": [
+          "it can be fluent without being correct.",
+          "Explain that an LLM predicts likely text from context. That makes it useful for drafting, searching, and reasoning, but it does not make it a source of truth.",
+          "Name hallucinated functions, stale library knowledge, wrong file assumptions, broad refactors, and confident summaries that do not match the diff.",
+          "provide repo context, constrain scope, ask for file evidence, run commands, inspect diffs, and verify behavior.",
+          "Treat the agent like a fast collaborator inside a control loop. It helps you think and move faster; your workflow decides what is real."
+        ],
+        "from": 0,
+        "duration": 840
+      },
+      {
+        "title": "2. What Are Subagents",
+        "target": "10-13 minutes, workflow diagram plus delegation example.",
+        "onScreenText": "Independent. Narrow. Reviewable.",
+        "screenDirection": "Show one large task split into three lanes: code map, tests, docs. Merge findings into one main decision.",
+        "demoSteps": [
+          "Write a broad task.",
+          "Split into two subagent-safe tasks.",
+          "Identify one task not safe to delegate.",
+          "Show a combined final decision."
+        ],
+        "exercisePrompt": "Take one large task and identify two safe subagent tasks plus one task you should keep yourself.",
+        "recap": "Subagents reduce load when the work can be split cleanly. They do not remove responsibility.",
+        "beats": [
+          "A subagent is not a replacement for your judgment. It is a bounded helper with a smaller job.",
+          "Explain parallel exploration, test inspection, doc review, research, or implementation in a clearly owned area.",
+          "A good subagent task is narrow, independent, observable, and has a clear output.",
+          "Look into this feature\" creates overlap and contradictions. \"Inspect tests for the billing path and return coverage gaps\" is usable.",
+          "Product judgment, architecture tradeoffs, and cross-cutting decisions should stay in the main thread."
+        ],
+        "from": 840,
+        "duration": 840
+      },
+      {
+        "title": "3. Codebase Exploration",
+        "target": "12-15 minutes, terminal and editor walkthrough.",
+        "onScreenText": "Explore before edit. File map before patch.",
+        "screenDirection": "Terminal search on left, editor file map on right.",
+        "demoSteps": [
+          "Search for a feature symbol.",
+          "Open entry point, core logic, and tests.",
+          "Ask for a file map with evidence.",
+          "Draft a tiny plan."
+        ],
+        "exercisePrompt": "Pick one feature and create a three-file map: entry point, core logic, tests.",
+        "recap": "Inspect the shape before you change the shape.",
+        "beats": [
+          "Exploration is not delay. It is how the agent avoids touching the wrong part of the repo.",
+          "Identify files, entry points, call sites, tests, config, and docs.",
+          "Use fast search, file listing, route names, symbol names, test names, and imports.",
+          "Ask the agent to report which files matter, what each one does, and what evidence supports it.",
+          "Require the agent to label uncertainty. If it cannot prove a file matters, it should say so."
+        ],
+        "from": 1680,
+        "duration": 840
+      },
+      {
+        "title": "4. Build A Feature",
+        "target": "12-15 minutes, small feature implementation demo.",
+        "onScreenText": "Behavior -> Pattern -> Patch -> Verify -> Review",
+        "screenDirection": "Add a small validation rule, CLI flag, UI field, or API response field.",
+        "demoSteps": [
+          "Write a feature brief.",
+          "Ask the agent to inspect existing pattern.",
+          "Apply a small change.",
+          "Run one check.",
+          "Review the diff."
+        ],
+        "exercisePrompt": "Write a feature brief with behavior, scope, likely files, and done condition.",
+        "recap": "A feature is done when the behavior is verified and the diff is understandable.",
+        "beats": [
+          "Feature work should be one thin slice, not a whole product area in one pass.",
+          "State what the user can do, what is in scope, what is not, and how success is checked.",
+          "Ask the agent to find how similar behavior is already implemented.",
+          "Change the smallest useful surface and avoid unrelated cleanup.",
+          "Run a targeted test, lint, typecheck, or manual flow."
+        ],
+        "from": 2520,
+        "duration": 840
+      },
+      {
+        "title": "5. Non Determinism",
+        "target": "10-12 minutes, repeated prompt comparison.",
+        "onScreenText": "Do not require identical output. Require bounded, verifiable output.",
+        "screenDirection": "Run two prompt variants and show different outputs. Then tighten constraints and show convergence.",
+        "demoSteps": [
+          "Ask for two approaches.",
+          "Compare differences.",
+          "Add constraints.",
+          "Show a more consistent response."
+        ],
+        "exercisePrompt": "Rewrite a loose prompt so two runs would likely produce the same acceptable output.",
+        "recap": "Non-determinism is managed with scope, constraints, and verification.",
+        "beats": [
+          "If you ask the same model the same thing twice, you may not get the same answer. That is normal.",
+          "Explain generation choices, context changes, tool output differences, and different valid paths.",
+          "Planning, code style, file selection, naming, and explanations can vary.",
+          "Use tighter prompts, explicit constraints, examples, tests, repo instructions, and stable output formats.",
+          "Brainstorming and design alternatives benefit from multiple runs."
+        ],
+        "from": 3360,
+        "duration": 840
+      },
+      {
+        "title": "6. Showing Context In The Status Line",
+        "target": "8-10 minutes, short workflow hygiene lesson.",
+        "onScreenText": "Repo. Branch. Task. Mode. Verification.",
+        "screenDirection": "Show two terminals: one ambiguous, one with visible repo/branch/task notes.",
+        "demoSteps": [
+          "Display current repo and branch.",
+          "State the active task.",
+          "Confirm scope before editing.",
+          "Note the verification command."
+        ],
+        "exercisePrompt": "Write a before-edit status check with repo, branch, scope, and verification plan.",
+        "recap": "Know where you are before you change anything.",
+        "beats": [
+          "Long AI sessions get risky when nobody remembers the repo, branch, task, or mode.",
+          "Explain repo name, branch, dirty state, current task, permission mode, and environment.",
+          "Wrong repo, wrong branch, wrong command, uncommitted changes, or forgotten task scope.",
+          "Before major edits, confirm where you are, what you are changing, and how you will verify it.",
+          "Visible context makes compaction and handoff easier."
+        ],
+        "from": 4200,
+        "duration": 840
+      },
+      {
+        "title": "7. Why Plan Mode Sucks",
+        "target": "10-13 minutes, compare generic plan to repo-grounded plan.",
+        "onScreenText": "Do not plan in a vacuum.",
+        "screenDirection": "Show a generic plan first, then inspect files and rewrite it with real file paths and checks.",
+        "demoSteps": [
+          "Generate a generic plan.",
+          "Inspect relevant files.",
+          "Rewrite plan using evidence.",
+          "Add validation and stop conditions."
+        ],
+        "exercisePrompt": "Take a broad task and write a two-step discovery plan before implementation.",
+        "recap": "Planning works when it stays tied to evidence and execution.",
+        "beats": [
+          "Planning is useful. Planning in a vacuum creates fake certainty.",
+          "Plans written before repo evidence often invent architecture, miss constraints, and overgeneralize.",
+          "Generic steps, no file references, no commands, no verification, and no stop conditions.",
+          "Short plan, inspect, revise, execute one step, verify, then continue.",
+          "Ask for files, commands, risks, and acceptance criteria."
+        ],
+        "from": 5040,
+        "duration": 840
+      },
+      {
+        "title": "8. The Grill Execute Clear Loop",
+        "target": "12-15 minutes, live loop demo.",
+        "onScreenText": "Grill -> Execute -> Clear",
+        "screenDirection": "Use one small bug or feature and run the whole loop.",
+        "demoSteps": [
+          "Ask clarifying questions.",
+          "Implement one bounded change.",
+          "Run one check.",
+          "Write a clear state summary."
+        ],
+        "exercisePrompt": "Use the loop on a feature idea and write one sentence for each stage.",
+        "recap": "The loop converts vague intent into repeatable progress.",
+        "beats": [
+          "grill, execute, clear.",
+          "Ask hard questions about scope, acceptance, risks, tradeoffs, and unknowns.",
+          "Make one bounded slice with visible checks. No sprawling edits.",
+          "Summarize what changed, what was verified, what remains open, and what comes next.",
+          "It prevents drift and keeps humans, agents, and subagents aligned."
+        ],
+        "from": 5880,
+        "duration": 840
+      },
+      {
+        "title": "9. Compaction",
+        "target": "10-12 minutes, summary rewrite exercise.",
+        "onScreenText": "Goal. Decisions. Files. Checks. Risks. Next.",
+        "screenDirection": "Turn a messy session transcript into a concise continuation note.",
+        "demoSteps": [
+          "Show noisy notes.",
+          "Extract durable facts.",
+          "Write a restart summary.",
+          "Check whether it supports continuation."
+        ],
+        "exercisePrompt": "Write a compaction note for a completed lesson exercise.",
+        "recap": "Compaction is state preservation, not just shortening.",
+        "beats": [
+          "Long sessions eventually get too large. Compaction preserves what matters and drops noise.",
+          "Goal, constraints, decisions, files changed, checks run, unresolved risks, and next step.",
+          "A diary is not a continuation summary. A good compaction is a restart packet.",
+          "Before a new phase, after major decisions, before handoff, or when context gets messy.",
+          "Make it short, factual, and action-oriented."
+        ],
+        "from": 6720,
+        "duration": 840
+      },
+      {
+        "title": "10. Handing Off",
+        "target": "10-13 minutes, final status writing demo.",
+        "onScreenText": "Done. Verified. Open. Next.",
+        "screenDirection": "Draft a final handoff message after a small feature.",
+        "demoSteps": [
+          "List changed files.",
+          "List checks run.",
+          "Note open risks.",
+          "Write next step."
+        ],
+        "exercisePrompt": "Write a handoff with four sections: done, verified, open, next.",
+        "recap": "Good handoffs preserve momentum.",
+        "beats": [
+          "A task is not handed off if the next person has to rediscover everything.",
+          "Goal, current state, changed files, decisions, checks, blockers, and next step.",
+          "Include exact file paths, exact commands, exact constraints, and known uncertainty.",
+          "Explain that complete for a slice is not the same as reviewed or merged.",
+          "If verification failed, say so directly and include output or next diagnostic step."
+        ],
+        "from": 7560,
+        "duration": 840
+      }
+    ]
+  },
+  {
+    "id": "04-day-2-steering",
+    "title": "04 - Day 2 Steering: Detailed Video Scripts",
+    "subtitle": "Script-driven draft video. Available from June 1, 2026.",
+    "sourceFile": "04-day-2-steering-script.md",
+    "fps": 12,
+    "width": 1920,
+    "height": 1080,
+    "durationInFrames": 5100,
+    "chapters": [
+      {
+        "title": "1. What Is A Repo Instruction File",
+        "target": "10-12 minutes, file walkthrough.",
+        "onScreenText": "Actionable. Current. Specific.",
+        "screenDirection": "Create or inspect the repo instruction file your harness reads.",
+        "demoSteps": [
+          "Add setup command.",
+          "Add test command.",
+          "Add style rule.",
+          "Add safety rule."
+        ],
+        "exercisePrompt": "Draft five repo instructions you want an agent to know before editing.",
+        "recap": "Repo instructions give the agent the local rules of the road.",
+        "beats": [
+          "Every serious harness needs a way to learn the local rules of a repo.",
+          "Explain that this may be AGENTS.md, CLAUDE.md, .github/copilot-instructions.md, opencode config, IDE custom instructions, or a linked project guide.",
+          "setup commands, tests, style, architecture notes, safety rules, and review expectations.",
+          "Huge docs, stale opinions, secrets, vague encouragement, and anything not actionable.",
+          "Project overview, commands, conventions, workflow rules, and escalation rules."
+        ],
+        "from": 0,
+        "duration": 840
+      },
+      {
+        "title": "2. Steering An Agent With Repo Instructions",
+        "target": "12-15 minutes, before/after steering demo.",
+        "onScreenText": "Repeated prompt -> repo instruction",
+        "screenDirection": "Add a final-report rule, then ask the agent to do a tiny task and compare output.",
+        "demoSteps": [
+          "Show repeated prompt.",
+          "Add to the harness-specific repo instruction file.",
+          "Run a small task.",
+          "Check whether behavior changed."
+        ],
+        "exercisePrompt": "Identify one instruction you repeat often and rewrite it for your harness's repo instruction mechanism.",
+        "recap": "Steering works when repo instructions are concrete enough to change behavior.",
+        "beats": [
+          "If you repeat the same prompt every session, it probably belongs in durable repo instructions.",
+          "Code style, testing rules, branch rules, forbidden actions, preferred tools, and final report format.",
+          "Take a repeated instruction and make it durable.",
+          "Use rg for search\" beats \"search carefully.\" \"Report files changed and checks run\" beats \"summarize well.",
+          "Run a tiny task and see if the agent follows the instruction."
+        ],
+        "from": 840,
+        "duration": 840
+      },
+      {
+        "title": "3. Progressive Disclosure",
+        "target": "10-13 minutes, layered-context demo.",
+        "onScreenText": "Enough context to act. More context when needed.",
+        "screenDirection": "Start with a short prompt, then reveal a module note after the agent identifies the relevant area.",
+        "demoSteps": [
+          "Give top-level task.",
+          "Ask agent to inspect.",
+          "Reveal module-specific doc.",
+          "Compare next plan quality."
+        ],
+        "exercisePrompt": "Split one long instruction document into top-level, module-level, and task-specific notes.",
+        "recap": "Layered context keeps the agent oriented without drowning it.",
+        "beats": [
+          "Dumping all context at once usually hides the part that matters.",
+          "Progressive disclosure means giving minimum useful context, then revealing more when the task needs it.",
+          "Top-level task, relevant docs, module rules, file-level conventions, and decision records.",
+          "Ambiguity, repeated mistake, new subsystem, failed verification, or risky decision.",
+          "Link deeper docs rather than forcing everything into one file."
+        ],
+        "from": 1680,
+        "duration": 840
+      },
+      {
+        "title": "4. What Are Reusable Agent Workflows",
+        "target": "10-12 minutes, reusable workflow anatomy walkthrough.",
+        "onScreenText": "Trigger. Workflow. Constraints. Output.",
+        "screenDirection": "Open a sample reusable workflow instruction and label each section.",
+        "demoSteps": [
+          "Open a reusable workflow.",
+          "Identify trigger.",
+          "Identify workflow steps.",
+          "Show output format."
+        ],
+        "exercisePrompt": "Name one workflow you repeat often enough to save as a reusable instruction.",
+        "recap": "Reusable workflows package repeatable expertise.",
+        "beats": [
+          "A reusable workflow gives the agent a process to follow when a task needs more than a loose prompt.",
+          "Repeated work should not depend on copy-pasted prompts or memory.",
+          "TDD, diagnose, review, PRD, handoff, research, prototype.",
+          "Trigger, workflow, constraints, templates, examples, and references.",
+          "Prompts steer the current task; reusable workflows steer the process."
+        ],
+        "from": 2520,
+        "duration": 840
+      },
+      {
+        "title": "5. Using Reusable Workflows For Steering",
+        "target": "12-15 minutes, workflow invocation demo.",
+        "onScreenText": "Workflow = process. Prompt = target.",
+        "screenDirection": "Invoke, attach, or paste a TDD or diagnose workflow on a small bug and point out each phase.",
+        "demoSteps": [
+          "Choose task shape.",
+          "Invoke, attach, or paste the relevant workflow.",
+          "Add local constraints.",
+          "Review final output against workflow phases."
+        ],
+        "exercisePrompt": "Write a prompt that invokes or includes a reusable workflow and adds task-specific constraints.",
+        "recap": "Use reusable workflows when you care about reliable process, not just an answer.",
+        "beats": [
+          "Reusable workflows turn loose requests into structured processes.",
+          "Bug, feature, refactor, review, document, research, prototype, or handoff.",
+          "inspect, diagnose, test, implement, verify, summarize.",
+          "Reusable workflows reduce skipped reproduction, validation, and review.",
+          "A reusable workflow gives process; the prompt gives the local target and boundaries."
+        ],
+        "from": 3360,
+        "duration": 840
+      },
+      {
+        "title": "6. Automatic Memory",
+        "target": "10-13 minutes, memory versus current evidence lesson.",
+        "onScreenText": "Memory suggests. Current evidence confirms.",
+        "screenDirection": "Use a remembered preference, then verify a current command in the repo.",
+        "demoSteps": [
+          "Reference a remembered preference.",
+          "Inspect current repo file.",
+          "Run or identify current command.",
+          "Decide based on current evidence."
+        ],
+        "exercisePrompt": "Write three things worth remembering and three things that must always be rechecked.",
+        "recap": "Memory is helpful context, not a source of truth.",
+        "beats": [
+          "Memory helps the agent start smarter, but it should not replace current evidence.",
+          "Preferences, recurring workflows, repo conventions, and prior decisions.",
+          "Current repo state, latest test result, dependency versions, active branch, or facts likely to change.",
+          "Memory can suggest; current files and commands confirm.",
+          "Ask the agent to use memory cautiously and refresh stale facts."
+        ],
+        "from": 4200,
+        "duration": 840
+      }
+    ]
+  },
+  {
+    "id": "05-day-3-planning",
+    "title": "05 - Day 3 Planning: Detailed Video Scripts",
+    "subtitle": "Script-driven draft video. Available from June 1, 2026.",
+    "sourceFile": "05-day-3-planning-script.md",
+    "fps": 12,
+    "width": 1920,
+    "height": 1080,
+    "durationInFrames": 5940,
+    "chapters": [
+      {
+        "title": "1. How To Tackle Massive Tasks",
+        "target": "12-15 minutes, planning scratchpad demo.",
+        "onScreenText": "Reduce uncertainty before implementation.",
+        "screenDirection": "Markdown plan with sections for unknowns, constraints, phases, validation.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Pick a large feature and write the goal, five unknowns, three constraints, and a three-phase plan.",
+        "recap": "Big work becomes safe when you shrink uncertainty before asking for code.",
+        "beats": [
+          "Massive tasks fail when the agent guesses too early.",
+          "Unclear requirements, many files, unknown architecture, multi-step integrations, or multi-day work.",
+          "Goal, constraints, unknowns, phases, tracer bullet, execution slices.",
+          "Ask the agent to inspect code, find integration points, and list open questions before editing.",
+          "Every phase needs a done condition, validation step, review gate, and stop condition."
+        ],
+        "from": 0,
+        "duration": 840
+      },
+      {
+        "title": "2. Write Great PRDs With A Reusable Workflow",
+        "target": "12-15 minutes, PRD shaping demo.",
+        "onScreenText": "PRD = product decisions made explicit.",
+        "screenDirection": "Convert a vague feature request into PRD sections.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write three observable acceptance criteria for one feature.",
+        "recap": "A good PRD reduces the number of decisions the agent has to guess.",
+        "beats": [
+          "Agents cannot rescue unclear product thinking.",
+          "Problem, users, scope, non-goals, acceptance criteria, risks, rollout.",
+          "It interviews the user, exposes ambiguity, and forces tradeoffs before implementation.",
+          "Convert fuzzy wishes into observable behavior.",
+          "A PRD should sharpen work, not become a novel."
+        ],
+        "from": 840,
+        "duration": 840
+      },
+      {
+        "title": "3. Split Features Across Multiple Context Windows With Multi Phase Plans",
+        "target": "12-15 minutes, phase table walkthrough.",
+        "onScreenText": "Design for context boundaries.",
+        "screenDirection": "Table with Phase, Goal, Inputs, Outputs, Checks, Handoff.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Create a three-phase plan where phase one proves the path end to end.",
+        "recap": "Multi-phase plans let you use fresh context without losing the thread.",
+        "beats": [
+          "One huge session loses detail and becomes hard to review.",
+          "Connected slices that can run in separate context windows.",
+          "Each phase needs goal, inputs, outputs, checks, and handoff.",
+          "Architecture or contract first, thin path next, expansion later.",
+          "Summarize decisions before switching windows."
+        ],
+        "from": 1680,
+        "duration": 840
+      },
+      {
+        "title": "4. What Are Tracer Bullets",
+        "target": "10-12 minutes, architecture path sketch.",
+        "onScreenText": "Thinnest real end-to-end path.",
+        "screenDirection": "Draw request -> service -> database -> UI and highlight the thinnest path.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Identify the thinnest real end-to-end path for one feature.",
+        "recap": "A tracer bullet proves the path before you invest in depth.",
+        "beats": [
+          "A tracer bullet is the thinnest real end-to-end path through the system.",
+          "A prototype can be disposable; a tracer bullet touches the real layers.",
+          "It exposes integration points and reduces speculation.",
+          "One API field from request to DB to UI; one CLI flag from parser to output.",
+          "If it skips the risky integration, it did not prove the path."
+        ],
+        "from": 2520,
+        "duration": 840
+      },
+      {
+        "title": "5. Use Tracer Bullets In Our Multi Phase Plan",
+        "target": "12-15 minutes, rewrite phase one.",
+        "onScreenText": "Choose risk, not convenience.",
+        "screenDirection": "Open phase table, rewrite first phase as tracer bullet, add review checklist.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Rewrite phase one of your plan so it proves one end-to-end path and defers the rest.",
+        "recap": "The tracer bullet turns uncertainty into evidence.",
+        "beats": [
+          "Phase one should answer the biggest integration question.",
+          "The easiest slice is not always the best first slice.",
+          "Define exactly what must be true for the tracer to count.",
+          "Polish, edge cases, performance, and full coverage come later.",
+          "Use tracer results to revise later phases."
+        ],
+        "from": 3360,
+        "duration": 840
+      },
+      {
+        "title": "6. Executing Our Multi Phase Plan",
+        "target": "12-15 minutes, one phase execution demo.",
+        "onScreenText": "Scope -> Inspect -> Change -> Verify -> Handoff",
+        "screenDirection": "Phase plan, agent prompt, diff, validation output, handoff note.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write the exact prompt you would use to execute phase one of your plan.",
+        "recap": "Each phase must leave behind evidence.",
+        "beats": [
+          "Do not execute a multi-phase plan as one giant prompt.",
+          "Give only the current phase plus necessary context, scope, and done condition.",
+          "Ask for a short implementation checklist after file inspection.",
+          "Make the change, run the phase check, inspect the diff.",
+          "Completed, changed files, checks, decisions, risks, next phase."
+        ],
+        "from": 4200,
+        "duration": 840
+      },
+      {
+        "title": "7. Ask User Question",
+        "target": "8-10 minutes, ambiguity-to-question rewrite.",
+        "onScreenText": "Ask humans for decisions, not discoverable facts.",
+        "screenDirection": "Show vague ambiguity and rewrite into an answerable question.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write one user question for a requirement ambiguity in your planned feature.",
+        "recap": "Good questions keep the plan honest.",
+        "beats": [
+          "When an agent guesses, ambiguity becomes a hidden product decision.",
+          "Ambiguous requirements, conflicting constraints, scope expansion, missing credentials, destructive actions.",
+          "Context, decision needed, options, tradeoff, recommended default if appropriate.",
+          "Vague, too broad, or asking what the agent can safely inspect.",
+          "Turn \"What should I do?\" into a specific two-option decision."
+        ],
+        "from": 5040,
+        "duration": 840
+      }
+    ]
+  },
+  {
+    "id": "06-day-4-feedback-loops",
+    "title": "06 - Day 4 Feedback Loops: Detailed Video Scripts",
+    "subtitle": "Script-driven draft video. Available from June 8, 2026.",
+    "sourceFile": "06-day-4-feedback-loops-script.md",
+    "fps": 12,
+    "width": 1920,
+    "height": 1080,
+    "durationInFrames": 5940,
+    "chapters": [
+      {
+        "title": "1. Is Code Cheap",
+        "target": "10-12 minutes, patch comparison.",
+        "onScreenText": "Code is cheap to create. Verification is not.",
+        "screenDirection": "Compare a large generated patch with a smaller verified patch.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Take one feature request and define the smallest useful version.",
+        "recap": "The useful unit is not lines generated. It is behavior verified.",
+        "beats": [
+          "If AI makes code cheap, what becomes expensive?",
+          "Understanding, integration, testing, review, and maintenance remain expensive.",
+          "Too much code, duplicate abstractions, unreviewed edge cases, hidden behavior changes.",
+          "Judgment, feedback, verification, maintainability.",
+          "Ask for smaller changes and stronger checks."
+        ],
+        "from": 0,
+        "duration": 840
+      },
+      {
+        "title": "2. Steering Agents To Use Feedback Loops With Reusable Workflows",
+        "target": "12-15 minutes, before/after workflow demo.",
+        "onScreenText": "Reproduce -> Investigate -> Change -> Verify",
+        "screenDirection": "Bug task with and without a feedback-loop workflow.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write a prompt that requires reproduce before fix and verify before summary.",
+        "recap": "The loop should appear in the work, not just in the narration.",
+        "beats": [
+          "Agents often skip feedback loops unless the workflow requires them.",
+          "Diagnose, TDD, review, pre-commit, handoff.",
+          "A saved workflow makes sequence and evidence part of the task.",
+          "Without the workflow, the agent patches early; with the workflow, it reproduces, investigates, changes, verifies.",
+          "If no repro, unstable tests, or broad scope, stop and report."
+        ],
+        "from": 840,
+        "duration": 840
+      },
+      {
+        "title": "3. Building A Do Work Workflow",
+        "target": "12-15 minutes, reusable workflow authoring demo.",
+        "onScreenText": "Default workflow: inspect, change, verify, summarize.",
+        "screenDirection": "Draft a concise Markdown workflow or harness-specific reusable instruction.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write your own six-step implementation workflow.",
+        "recap": "A do-work workflow captures your default engineering discipline.",
+        "beats": [
+          "A do-work workflow is your default process for ordinary implementation tasks.",
+          "Understand, inspect, plan briefly, implement narrowly, verify, summarize.",
+          "Respect user changes, avoid unrelated refactors, use existing patterns, run checks.",
+          "Files changed, checks run, result, residual risks.",
+          "Ask before broad scope, destructive commands, or ambiguous product choices."
+        ],
+        "from": 1680,
+        "duration": 840
+      },
+      {
+        "title": "4. Using Our Do Work Workflow",
+        "target": "10-13 minutes, run and evaluate workflow.",
+        "onScreenText": "Evaluate the behavior, not the prose.",
+        "screenDirection": "Run a tiny code change using the do-work workflow.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Run your do-work prompt on a tiny task and score it 1-4.",
+        "recap": "Reusable workflows are testable artifacts.",
+        "beats": [
+          "A reusable workflow only matters if it changes behavior.",
+          "Start a small task and explicitly invoke the workflow.",
+          "Inspect, plan, implement, verify.",
+          "Files changed, checks run, result, risks.",
+          "Ask for the skipped step, not just better wording."
+        ],
+        "from": 2520,
+        "duration": 840
+      },
+      {
+        "title": "5. Fixing Agents Broken Formatting With Pre Commit",
+        "target": "12-15 minutes, formatting failure and hook demo.",
+        "onScreenText": "Pre-commit catches avoidable mistakes.",
+        "screenDirection": "Introduce formatting issue, run hook, show diff.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "List the checks your repo should run before commit.",
+        "recap": "Pre-commit keeps review focused on behavior, not cleanup.",
+        "beats": [
+          "Agents can write code that works but violates local formatting.",
+          "Automated checks before commit.",
+          "Formatter, linter, typecheck, tests, secret scan, generated file checks.",
+          "Show formatting failure, run formatter or hook, inspect corrected diff.",
+          "Make hooks part of the definition of done."
+        ],
+        "from": 3360,
+        "duration": 840
+      },
+      {
+        "title": "6. What Is Red Green Refactor",
+        "target": "10-12 minutes, loop explanation.",
+        "onScreenText": "Red = prove failure. Green = pass. Refactor = improve safely.",
+        "screenDirection": "Show failing test, minimal pass, small cleanup.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write one behavior that should fail before the fix.",
+        "recap": "The loop anchors the agent to observable behavior.",
+        "beats": [
+          "Red, green, refactor is simple because the sequence matters.",
+          "A failing test proves the test can catch the behavior.",
+          "Make the smallest change that passes.",
+          "Clean up while tests protect behavior.",
+          "The loop prevents premature broad edits."
+        ],
+        "from": 4200,
+        "duration": 840
+      },
+      {
+        "title": "7. Red Green Refactor",
+        "target": "12-15 minutes, full cycle demo.",
+        "onScreenText": "Prove. Fix. Clean. Verify.",
+        "screenDirection": "Tiny parser, validator, or UI behavior.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Use the loop on one small bug and record the failing test, smallest fix, and cleanup step.",
+        "recap": "Red-green-refactor turns AI help into dependable software work.",
+        "beats": [
+          "Now we run the loop end to end.",
+          "Ask the agent to write or identify a meaningful failing test and run it.",
+          "Ask for the smallest implementation that passes.",
+          "Improve naming or structure without changing behavior.",
+          "Run targeted test and one broader relevant check."
+        ],
+        "from": 5040,
+        "duration": 840
+      }
+    ]
+  },
+  {
+    "id": "07-day-5-afk-agents",
+    "title": "07 - Day 5 AFK Agents: Detailed Video Scripts",
+    "subtitle": "Script-driven draft video. Available from June 8, 2026.",
+    "sourceFile": "07-day-5-afk-agents-script.md",
+    "fps": 12,
+    "width": 1920,
+    "height": 1080,
+    "durationInFrames": 4704,
+    "chapters": [
+      {
+        "title": "1. What Is An AFK Agent",
+        "target": "10-12 minutes, concept plus prompt rewrite.",
+        "onScreenText": "AFK = unattended, not unbounded.",
+        "screenDirection": "Rewrite \"clean up the repo\" into a bounded AFK task with folder scope and validation.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write a five-line AFK task envelope for one safe maintenance task.",
+        "recap": "AFK agents are useful when the work is narrow enough to finish and verify.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 0,
+        "duration": 516
+      },
+      {
+        "title": "2. Sandcastle",
+        "target": "10-13 minutes, isolated workspace demo.",
+        "onScreenText": "Disposable work area. Clear boundary. Easy reset.",
+        "screenDirection": "Show a temporary branch or worktree and compare it with the untouched main working area.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Design a sandcastle setup for your practice repo: files, data, credentials, and reset path.",
+        "recap": "A sandcastle lets agents experiment without risking important state.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 516,
+        "duration": 516
+      },
+      {
+        "title": "3. Trying HITL Agents",
+        "target": "10-12 minutes, approval-gate demo.",
+        "onScreenText": "Approval at decision boundaries.",
+        "screenDirection": "Agent produces a plan and stops. Human narrows scope before continuing.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Add two approval gates to a task you would normally give an agent.",
+        "recap": "HITL works when humans review decisions, not every keystroke.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 1032,
+        "duration": 516
+      },
+      {
+        "title": "4. Sandboxing",
+        "target": "12-15 minutes, permissions and blast-radius lesson.",
+        "onScreenText": "Sandboxing makes safety enforceable.",
+        "screenDirection": "Show read-only exploration, then a limited write task with an escalation prompt.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "List resources your agent should not access without explicit approval.",
+        "recap": "Sandboxing turns safety from hope into a boundary.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 1548,
+        "duration": 516
+      },
+      {
+        "title": "5. Setting Up And Trying AFK Agents",
+        "target": "12-15 minutes, first AFK run.",
+        "onScreenText": "Start small. Require evidence.",
+        "screenDirection": "Queue a docs cleanup or lint fix and review the final report.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Run one AFK task that touches no production code and requires a final verification report.",
+        "recap": "Begin AFK work with low risk and strong reporting.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 2064,
+        "duration": 516
+      },
+      {
+        "title": "6. Using Backlogs To Queue Tasks For AFK Agents",
+        "target": "10-13 minutes, backlog shaping.",
+        "onScreenText": "AFK throughput depends on backlog quality.",
+        "screenDirection": "Turn raw TODOs into structured backlog items.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write one backlog item detailed enough for an agent to start without asking.",
+        "recap": "Prepared tasks make unattended work possible.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 2580,
+        "duration": 516
+      },
+      {
+        "title": "7. Setting Up Our Repo For GitHub Issues",
+        "target": "12-15 minutes, GitHub Issues setup.",
+        "onScreenText": "Issue = task contract.",
+        "screenDirection": "Fill issue template and apply labels.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Draft one GitHub Issue for a small agent task.",
+        "recap": "Good issues are reviewable before work starts.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 3096,
+        "duration": 516
+      },
+      {
+        "title": "8. Hooking Up Agents To Your Backlog",
+        "target": "12-15 minutes, issue-to-workflow trace.",
+        "onScreenText": "Issue -> Change -> Evidence.",
+        "screenDirection": "Move one issue from ready to review with updates.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Define your backlog state machine for agent work.",
+        "recap": "Traceability connects backlog, code, and verification.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 3612,
+        "duration": 516
+      },
+      {
+        "title": "9. Updating Our PRD And Plan Workflow To Use GitHub",
+        "target": "12-15 minutes, PRD-to-issues conversion.",
+        "onScreenText": "PRD -> Plan -> Issues -> Agent work.",
+        "screenDirection": "Convert PRD excerpt into three linked issues.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Update your planning template so every phase can become an issue.",
+        "recap": "Plans become operational when they feed the backlog.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 4128,
+        "duration": 516
+      }
+    ]
+  },
+  {
+    "id": "08-day-6-human-in-the-loop-patterns",
+    "title": "08 - Day 6 Human In The Loop Patterns: Detailed Video Scripts",
+    "subtitle": "Script-driven draft video. Available from June 8, 2026.",
+    "sourceFile": "08-day-6-human-in-the-loop-patterns-script.md",
+    "fps": 12,
+    "width": 1920,
+    "height": 1080,
+    "durationInFrames": 7284,
+    "chapters": [
+      {
+        "title": "1. HITL And AFK Tasks",
+        "target": "10-12 minutes, task classification demo.",
+        "onScreenText": "HITL for judgment. AFK for bounded execution.",
+        "screenDirection": "Sort backlog cards into HITL, AFK, and needs-shaping buckets.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Classify three tasks from your backlog.",
+        "recap": "Pick the workflow based on risk, not preference.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 0,
+        "duration": 516
+      },
+      {
+        "title": "2. Dont Plan Kanban",
+        "target": "8-10 minutes, board critique.",
+        "onScreenText": "Kanban tracks work. It does not shape work.",
+        "screenDirection": "Compare vague board with shaped board.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Review one board column and mark cards that are not actually ready.",
+        "recap": "Ready means defined, not merely assigned.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 516,
+        "duration": 516
+      },
+      {
+        "title": "3. Using The Kanban Workflow",
+        "target": "10-13 minutes, board state workflow.",
+        "onScreenText": "Columns should mean something.",
+        "screenDirection": "Move one task across columns and add notes.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write entry and exit criteria for your agent board columns.",
+        "recap": "Kanban works when state changes are evidence-based.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 1032,
+        "duration": 516
+      },
+      {
+        "title": "4. Research",
+        "target": "10-12 minutes, structured research output.",
+        "onScreenText": "Facts. Interpretation. Recommendation.",
+        "screenDirection": "Show research brief and evidence summary.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write a research brief with one question and three required output fields.",
+        "recap": "Good research makes uncertainty visible.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 1548,
+        "duration": 516
+      },
+      {
+        "title": "5. Trying Out Research",
+        "target": "12-15 minutes, live research decision.",
+        "onScreenText": "Research supports decisions.",
+        "screenDirection": "Run a library or API research question and produce a decision note.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Run one research prompt and write a final decision note.",
+        "recap": "Research is done when it supports a decision or next test.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 2064,
+        "duration": 516
+      },
+      {
+        "title": "6. Prototyping",
+        "target": "10-12 minutes, prototype framing.",
+        "onScreenText": "Prototype to learn, not to ship.",
+        "screenDirection": "Sketch a UI or CLI prototype with question and timebox visible.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write one prototype question and a 30-minute timebox.",
+        "recap": "A prototype is valuable when it answers a decision.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 2580,
+        "duration": 516
+      },
+      {
+        "title": "7. Trying Out UI Prototyping",
+        "target": "12-15 minutes, three-option UI review.",
+        "onScreenText": "Generate options. Compare tradeoffs.",
+        "screenDirection": "Compare three UI options side by side with a checklist.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write a UI prototype brief for one screen in your project.",
+        "recap": "UI prototypes create concrete options for human judgment.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 3096,
+        "duration": 516
+      },
+      {
+        "title": "8. The Prototype Workflow",
+        "target": "10-13 minutes, workflow invocation.",
+        "onScreenText": "Question -> Timebox -> Artifact -> Decision",
+        "screenDirection": "Run prototype prompt and finish with keep/change/discard summary.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write a prototype-workflow prompt for your risky feature question.",
+        "recap": "The prototype workflow keeps experiments bounded and useful.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 3612,
+        "duration": 516
+      },
+      {
+        "title": "9. Designing Codebases Ai Loves",
+        "target": "12-15 minutes, module comparison.",
+        "onScreenText": "Agents love code humans can understand.",
+        "screenDirection": "Compare clean module and tangled module.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Score one module for clarity, boundaries, tests, and examples.",
+        "recap": "AI-navigable code is usually human-navigable code.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 4128,
+        "duration": 516
+      },
+      {
+        "title": "10. The Improve Codebase Architecture Workflow",
+        "target": "12-15 minutes, architecture opportunity ranking.",
+        "onScreenText": "Diagnose before rewrites.",
+        "screenDirection": "Ask for three opportunities and score them.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write an architecture-review prompt that forbids immediate edits.",
+        "recap": "Architecture improvement starts with diagnosis and ranking.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 4644,
+        "duration": 516
+      },
+      {
+        "title": "11. Adding Module Awareness To Our PRD And Plan Workflow",
+        "target": "12-15 minutes, planning template update.",
+        "onScreenText": "Plans need codebase shape.",
+        "screenDirection": "Add affected-modules section to a PRD.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Add module awareness fields to your planning template.",
+        "recap": "Plans are safer when they include product intent and code boundaries.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 5160,
+        "duration": 516
+      },
+      {
+        "title": "12. The Final Workflow",
+        "target": "12-15 minutes, capstone workflow walkthrough.",
+        "onScreenText": "Shape -> Plan -> Execute -> Verify -> Scale",
+        "screenDirection": "Walk one feature from idea to issue to tracer bullet to verified handoff.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Write your personal AI coding workflow as a 10-step checklist.",
+        "recap": "The final workflow is a set of controls chosen by risk.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 5676,
+        "duration": 516
+      },
+      {
+        "title": "Capstone Project",
+        "target": "10-15 minute capstone briefing plus 45-90 minutes learner work.",
+        "onScreenText": "Capstone Project",
+        "screenDirection": "Show required evidence checklist and sample final handoff.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Complete one shaped agent task end to end and submit the evidence list.",
+        "recap": "The capstone succeeds when the workflow is traceable from task definition through verification.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 6192,
+        "duration": 516
+      },
+      {
+        "title": "Assessment Rubric",
+        "target": "Scripted course lesson",
+        "onScreenText": "Assessment Rubric",
+        "screenDirection": "Show the lesson concept, then move into the concrete workflow.",
+        "demoSteps": [
+          "Show the concept",
+          "Connect it to the course workflow",
+          "End with the learner action"
+        ],
+        "exercisePrompt": "Pause and apply this chapter to your own repo or course journal.",
+        "recap": "Capture the takeaway before moving to the next chapter.",
+        "beats": [
+          "Use this chapter to move from concept to concrete practice."
+        ],
+        "from": 6708,
+        "duration": 516
+      }
+    ]
+  }
+]
