@@ -19,8 +19,6 @@ Use `GitHub Wiki` only if you want fast, informal notes with minimal structure. 
 
 - Removed oversized generated output folders and local dependency trees.
 - Added a `docs/` site for browser-based reading and navigation.
-- Published the repository markdown into `docs/content/` for GitHub Pages.
-- Added a library view and a reader view so the actual repo content can be browsed as a site.
 - Kept the repository focused on notes, examples, diagrams, and lightweight assets.
 
 ## Repository structure
@@ -28,21 +26,12 @@ Use `GitHub Wiki` only if you want fast, informal notes with minimal structure. 
 ```text
 .
 ├── README.md
-├── course/
 └── docs/
-    ├── library.html
-    ├── reader.html
     ├── index.html
     ├── foundations.html
     ├── llms.html
     ├── roadmap.html
-    ├── content/
-    │   ├── README.md
-    │   └── course/
     └── assets/
-        ├── catalog.js
-        ├── library.js
-        ├── reader.js
         └── styles.css
 ```
 
@@ -54,21 +43,17 @@ Use `GitHub Wiki` only if you want fast, informal notes with minimal structure. 
 4. Select your default branch and the `/docs` folder.
 5. Save the settings.
 
-GitHub will publish the site from `docs/index.html`, with the full published markdown available through `docs/library.html` and `docs/reader.html`.
+GitHub will publish the site from `docs/index.html`.
 
 ## Content model
 
 - `docs/index.html`: landing page and navigation hub
-- `docs/library.html`: full content library organized by repo collection
-- `docs/reader.html`: markdown reader for published repo documents
-- `docs/content/`: Pages-published copy of the repo markdown content
 - `docs/foundations.html`: core AI and ML concepts
 - `docs/llms.html`: LLM-specific concepts and workflows
 - `docs/roadmap.html`: study flow and suggested repository growth
 
 ## Content guidelines
 
-- Keep source markdown in the repository and publish reader-friendly copies under `docs/content/`.
-- Add new entries to the library and reader catalog when you publish new repo documents.
-- Link high-value topics from `docs/index.html`.
+- Add notes or examples as new pages under `docs/`.
+- Link each new topic from `docs/index.html`.
 - Keep large generated assets and temporary build output outside the docs branch.

@@ -16,6 +16,7 @@
         <a class="brand" href="index.html"><span class="brand-mark">AI Fundamentals</span></a>
         <nav class="nav" aria-label="Primary">
           <a class="active" href="index.html">Home</a>
+          <a href="library.html">Library</a>
           <a href="foundations.html">Foundations</a>
           <a href="llms.html">LLMs</a>
           <a href="roadmap.html">Roadmap</a>
@@ -27,16 +28,16 @@
       <section class="hero">
         <div class="shell hero-grid">
           <div class="panel hero-copy">
-            <p class="eyebrow">Docs-First Repo</p>
-            <h1>Readable notes beat oversized generated assets.</h1>
+            <p class="eyebrow">Full Repo Reader</p>
+            <h1>Read the actual repository, not just a summary page.</h1>
             <p>
-              This repository now favors lightweight pages, direct navigation, and topic-based
-              organization. It is structured to publish cleanly with GitHub Pages from the
-              <code>docs/</code> directory.
+              The site now publishes the course markdown itself through GitHub Pages. Use the
+              library and reader views to browse lessons, guides, workbook material, and recording
+              scripts from the repo content.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="foundations.html">Start with Foundations</a>
-              <a class="button secondary" href="roadmap.html">See the Study Roadmap</a>
+              <a class="button primary" href="library.html">Browse The Full Library</a>
+              <a class="button secondary" href="reader.html?path=content/course/README.md">Open Course Overview</a>
             </div>
           </div>
 
@@ -44,13 +45,13 @@
             <p class="eyebrow">At A Glance</p>
             <h2>What changed</h2>
             <div class="pill-row">
-              <span class="pill">Large outputs removed</span>
-              <span class="pill">Pages-ready docs</span>
-              <span class="pill">Simple navigation</span>
+              <span class="pill">Repo markdown published</span>
+              <span class="pill">Library view added</span>
+              <span class="pill">Reader mode added</span>
             </div>
             <p>
-              The repo is positioned for notes, diagrams, examples, and short references. Keep
-              heavy generated artifacts outside the main docs branch.
+              Instead of a single landing page, the site can now expose the real material stored in
+              the repository under a Pages-friendly content tree.
             </p>
           </aside>
         </div>
@@ -58,32 +59,31 @@
 
       <section class="section">
         <div class="shell">
-          <h2>Browse By Topic</h2>
+          <h2>Start With The Real Content</h2>
           <div class="grid three">
-            <a class="card" href="foundations.html">
-              <span class="card-kicker">Core Concepts</span>
-              <h3>AI and ML Foundations</h3>
+            <a class="card" href="reader.html?path=content/course/README.md">
+              <span class="card-kicker">Course Map</span>
+              <h3>Course Overview</h3>
               <p>
-                Models, data, training, inference, evaluation, and the minimum vocabulary needed
-                to reason clearly about AI systems.
+                Start with the repo-backed overview of the curriculum, outcomes, and running sample
+                app.
               </p>
             </a>
 
-            <a class="card" href="llms.html">
-              <span class="card-kicker">Modern Systems</span>
-              <h3>Large Language Models</h3>
+            <a class="card" href="library.html#course">
+              <span class="card-kicker">Lesson Track</span>
+              <h3>Main Course Lessons</h3>
               <p>
-                Transformers, prompting, context windows, embeddings, retrieval, agents, and
-                where each piece fits.
+                Read the full set of lessons from setup and harness usage through AFK and HITL
+                workflows.
               </p>
             </a>
 
-            <a class="card" href="roadmap.html">
-              <span class="card-kicker">Repo Structure</span>
-              <h3>Learning Roadmap</h3>
+            <a class="card" href="library.html#scripts">
+              <span class="card-kicker">Production Notes</span>
+              <h3>Recording Scripts</h3>
               <p>
-                A practical reading sequence plus a recommended structure for growing this repo
-                without turning it back into an artifact dump.
+                Open the detailed presenter scripts and lesson production guidance from the repo.
               </p>
             </a>
           </div>
@@ -93,28 +93,28 @@
       <section class="section">
         <div class="shell split">
           <div class="panel content-panel">
-            <p class="eyebrow">Publishing</p>
-            <h2>GitHub Pages setup</h2>
-            <ol>
-              <li>Push the repo to GitHub.</li>
-              <li>Open repository <code>Settings</code> and then <code>Pages</code>.</li>
-              <li>Select <code>Deploy from a branch</code>.</li>
-              <li>Choose the default branch and the <code>/docs</code> folder.</li>
-              <li>Save. GitHub will publish <code>docs/index.html</code>.</li>
-            </ol>
+            <p class="eyebrow">Library</p>
+            <h2>What the site now publishes</h2>
+            <ul>
+              <li>The repository README and publishing notes</li>
+              <li>The main course overview and lesson sequence</li>
+              <li>Reference guides, workbook material, and sample app docs</li>
+              <li>Recording scripts stored under <code>course/video-scripts/</code></li>
+            </ul>
           </div>
 
           <div class="panel content-panel">
-            <p class="eyebrow">Operating Rule</p>
-            <h2>Keep the repo light</h2>
+            <p class="eyebrow">Reference Pages</p>
+            <h2>Keep the curated summaries too</h2>
             <div class="callout">
-              Prefer notes, diagrams, code examples, and links. Avoid checking in large generated
-              outputs, local dependency trees, or bulky binary exports.
+              The summary pages still help with orientation, but they are now secondary to the full
+              published repo content.
             </div>
-            <p>
-              That keeps the site fast to load, easier to review in pull requests, and easier to
-              maintain over time.
-            </p>
+            <div class="stack-links">
+              <a class="sidebar-link" href="foundations.html">Open Foundations summary</a>
+              <a class="sidebar-link" href="llms.html">Open LLMs summary</a>
+              <a class="sidebar-link" href="roadmap.html">Open Roadmap summary</a>
+            </div>
           </div>
         </div>
       </section>

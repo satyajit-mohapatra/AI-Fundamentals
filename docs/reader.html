@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Fundamentals Reader</title>
+    <meta
+      name="description"
+      content="Read the published markdown content of the AI Fundamentals repository."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell site-header-inner">
+        <a class="brand" href="index.html"><span class="brand-mark">AI Fundamentals</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="library.html">Library</a>
+          <a href="foundations.html">Foundations</a>
+          <a href="llms.html">LLMs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="shell">
+        <div class="panel content-panel">
+          <p class="eyebrow" id="doc-kicker">Document</p>
+          <h1 id="doc-title">Loading document...</h1>
+          <p id="doc-summary">
+            The document body below is loaded from the published repository content.
+          </p>
+          <div class="meta-row">
+            <span class="meta-pill" id="doc-meta"></span>
+            <a class="meta-pill link-pill" id="source-link" href="#" target="_blank" rel="noreferrer">Open source on GitHub</a>
+          </div>
+        </div>
+
+        <div class="reader-layout">
+          <aside class="panel reader-sidebar">
+            <div class="reader-sidebar-block">
+              <p class="eyebrow">On This Page</p>
+              <nav id="toc" class="toc" aria-label="Table of contents"></nav>
+            </div>
+            <div class="reader-sidebar-block">
+              <p class="eyebrow">Browse</p>
+              <a class="sidebar-link" href="library.html">Back to full library</a>
+            </div>
+          </aside>
+
+          <article class="panel reader-article">
+            <div id="article-body" class="article-body"></div>
+            <div class="pager">
+              <a id="prev-doc" class="pager-link" href="#"></a>
+              <a id="next-doc" class="pager-link" href="#"></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="shell">
+        <div class="panel footer-panel">
+          Reader mode renders markdown from the published repository snapshot in
+          <code>docs/content/</code>.
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+    <script src="assets/catalog.js"></script>
+    <script src="assets/reader.js"></script>
+  </body>
+</html>

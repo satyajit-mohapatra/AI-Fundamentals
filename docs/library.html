@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Fundamentals Library</title>
+    <meta
+      name="description"
+      content="Browse the full published content of the AI Fundamentals repository."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell site-header-inner">
+        <a class="brand" href="index.html"><span class="brand-mark">AI Fundamentals</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a class="active" href="library.html">Library</a>
+          <a href="foundations.html">Foundations</a>
+          <a href="llms.html">LLMs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="shell">
+        <div class="panel content-panel">
+          <p class="eyebrow">Published Content</p>
+          <h1>The full repo, organized for reading</h1>
+          <p>
+            This library publishes the repository markdown into GitHub Pages so readers can browse
+            the actual course material, supporting guides, workbook, and recording scripts.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="reader.html?path=content/course/README.md">Open Course Overview</a>
+            <a class="button secondary" href="reader.html?path=content/course/student-workbook.md">Open Student Workbook</a>
+          </div>
+          <p class="meta-line" id="library-summary"></p>
+        </div>
+
+        <div id="library-root"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="shell">
+        <div class="panel footer-panel">
+          The library is served from <code>docs/content/</code> so it can be published directly by
+          GitHub Pages.
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/catalog.js"></script>
+    <script src="assets/library.js"></script>
+  </body>
+</html>
