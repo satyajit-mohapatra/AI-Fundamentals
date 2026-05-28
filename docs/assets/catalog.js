@@ -13,6 +13,31 @@ window.AI_FUNDAMENTALS_CATALOG = [
     ]
   },
   {
+    id: "learning",
+    title: "Learning Guides",
+    description: "Expanded study documents built from the short summary pages.",
+    items: [
+      {
+        title: "Learning Guides Overview",
+        path: "content/learning/README.md",
+        kind: "Guide",
+        blurb: "How to use the expanded learning documents alongside the summary pages."
+      },
+      {
+        title: "Foundations Learning Guide",
+        path: "content/learning/foundations-learning-guide.md",
+        kind: "Learning Guide",
+        blurb: "Expands the Foundations page into deeper explanations, examples, metrics, and study prompts."
+      },
+      {
+        title: "LLM Learning Guide",
+        path: "content/learning/llm-learning-guide.md",
+        kind: "Learning Guide",
+        blurb: "Expands the LLMs page into system thinking, failure modes, RAG, evaluation, and safety."
+      }
+    ]
+  },
+  {
     id: "course",
     title: "Course Track",
     description: "The main lesson sequence plus the core guides that frame the course.",

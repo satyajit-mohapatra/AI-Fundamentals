@@ -27,7 +27,15 @@ function slugify(text) {
 }
 
 function toSourcePath(contentPath) {
-  return contentPath.replace(/^content\//, "");
+  if (contentPath.startsWith("content/course/")) {
+    return contentPath.replace(/^content\//, "");
+  }
+
+  if (contentPath === "content/README.md") {
+    return "README.md";
+  }
+
+  return `docs/${contentPath}`;
 }
 
 function rewriteContentLinks(basePath) {
