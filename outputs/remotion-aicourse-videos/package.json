@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:data": "node scripts/build-video-data.mjs",
+    "render:all": "npm run build:data && node scripts/render-all.mjs",
+    "studio": "npm run build:data && remotion studio src/index.ts",
+    "still": "npm run build:data && remotion still src/index.ts 01-before-we-start out/preview.png --frame=120"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.391",
+    "@remotion/media": "^4.0.391",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "remotion": "^4.0.391"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

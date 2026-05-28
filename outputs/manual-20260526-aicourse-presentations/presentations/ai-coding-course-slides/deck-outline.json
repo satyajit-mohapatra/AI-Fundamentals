@@ -1,0 +1,307 @@
+[
+  {
+    "title": "AI Coding for Real Engineers",
+    "kicker": "Course deck",
+    "claim": "Teach agents as engineering workflow, not magic code generation.",
+    "bullets": [
+      "Two-week arc from setup to AFK/HITL workflows",
+      "Running sample app: CourseForge",
+      "Every day ends with a concrete student artifact"
+    ],
+    "image": "hero.png",
+    "layout": "hero"
+  },
+  {
+    "title": "The Course Thesis",
+    "kicker": "Why this matters",
+    "claim": "The winning workflow is the middle path between over-delegating and under-delegating.",
+    "bullets": [
+      "Works across terminal, CLI, IDE, and hosted agent harnesses",
+      "Delegate bounded work to move faster",
+      "Keep product judgment and risk ownership human",
+      "Use evidence loops to preserve codebase sense"
+    ],
+    "image": "hero.png",
+    "layout": "split"
+  },
+  {
+    "title": "Running Sample App: CourseForge",
+    "kicker": "Build thread",
+    "claim": "Students build a production-style course creation workspace in thin slices.",
+    "bullets": [
+      "Courses, modules, lessons, scripts",
+      "AI writing modes and review states",
+      "Publishing tasks, backlog, Kanban, capstone"
+    ],
+    "image": "courseforge.png",
+    "layout": "imageRight"
+  },
+  {
+    "title": "Two-Week Learning Arc",
+    "kicker": "Course map",
+    "claim": "Week 1 builds control; Week 2 scales that control across agents and workflows.",
+    "bullets": [
+      "Week 1: agent harness, fundamentals, steering, planning",
+      "Week 2: feedback loops, AFK, HITL, research, architecture",
+      "Capstone: Lesson Script Review Workflow"
+    ],
+    "image": "workbook.png",
+    "layout": "timeline"
+  },
+  {
+    "title": "01 - Before We Start",
+    "kicker": "Available May 18",
+    "claim": "Orient students around safety, setup, community, and the final workflow.",
+    "bullets": [
+      "Set course expectations and Discord norms",
+      "Set up repo, migrations, and your chosen harness",
+      "Create first setup notes and migration checklist"
+    ],
+    "image": "hero.png",
+    "layout": "day"
+  },
+  {
+    "title": "Day 01 Student Tasks",
+    "kicker": "Artifacts",
+    "claim": "Students leave with a known baseline and a personal AI coding policy.",
+    "bullets": [
+      "CourseForge setup notes",
+      "Migration safety checklist for ScriptDraft",
+      "Office-hours question template",
+      "Personal risk statement: what stays human-owned"
+    ],
+    "image": "workbook.png",
+    "layout": "tasks"
+  },
+  {
+    "title": "02 - Getting To Know Your Agent Harness",
+    "kicker": "Available May 18",
+    "claim": "The agent becomes useful when sessions, prompts, commands, and permissions are explicit.",
+    "bullets": [
+      "Manage current repo and session context",
+      "Prompt with goal, scope, constraints, done condition",
+      "Use shell commands as evidence"
+    ],
+    "image": "harness.png",
+    "layout": "day"
+  },
+  {
+    "title": "Agent Harness Practice",
+    "kicker": "CourseForge orientation",
+    "claim": "First contact with a repo should be read-only in any tool.",
+    "bullets": [
+      "Translate the loop to your chosen harness",
+      "Ask the agent to inspect CourseForge without edits",
+      "Create a session-start worksheet",
+      "Define a permission policy for risky actions"
+    ],
+    "image": "harness.png",
+    "layout": "imageRight"
+  },
+  {
+    "title": "03 - Day 1 Fundamentals",
+    "kicker": "Available June 1",
+    "claim": "Students learn to control LLM uncertainty with exploration, subagents, verification, and handoff.",
+    "bullets": [
+      "LLMs are fluent, not automatically correct",
+      "Subagents help with bounded side work",
+      "Explore the codebase before building features"
+    ],
+    "image": "fundamentals.png",
+    "layout": "day"
+  },
+  {
+    "title": "Day 1 Example: Lesson Status Filter",
+    "kicker": "CourseForge feature slice",
+    "claim": "Build one small, verifiable feature after mapping the code path.",
+    "bullets": [
+      "Map entry point, core logic, and test location",
+      "Add a lesson status filter or duration display",
+      "Run one check and write a handoff"
+    ],
+    "image": "fundamentals.png",
+    "layout": "split"
+  },
+  {
+    "title": "Grill, Execute, Clear",
+    "kicker": "Operating loop",
+    "claim": "The loop converts vague requests into repeatable progress.",
+    "bullets": [
+      "Grill: scope, risks, acceptance, unknowns",
+      "Execute: one bounded slice",
+      "Clear: changed files, checks, risks, next step"
+    ],
+    "image": "fundamentals.png",
+    "layout": "process"
+  },
+  {
+    "title": "04 - Day 2 Steering",
+    "kicker": "Available June 1",
+    "claim": "Persistent instructions make agent behavior more reliable across sessions.",
+    "bullets": [
+      "Write actionable repo instructions",
+      "Use progressive disclosure to reduce context noise",
+      "Package repeated work as reusable workflows"
+    ],
+    "image": "steering.png",
+    "layout": "day"
+  },
+  {
+    "title": "Steering Assets Students Create",
+    "kicker": "CourseForge controls",
+    "claim": "The repo starts teaching the agent how work should happen.",
+    "bullets": [
+      "Repo instructions with setup, tests, style, safety",
+      "Module-specific notes for lessons/scripts",
+      "A first workflow candidate: do-work, diagnose, or handoff"
+    ],
+    "image": "steering.png",
+    "layout": "tasks"
+  },
+  {
+    "title": "05 - Day 3 Planning",
+    "kicker": "Available June 1",
+    "claim": "Large tasks become safe when they are decomposed into evidence-producing phases.",
+    "bullets": [
+      "Write PRDs before implementation",
+      "Split work across context windows",
+      "Use tracer bullets to prove risky paths"
+    ],
+    "image": "planning.png",
+    "layout": "day"
+  },
+  {
+    "title": "Planning Example: AI Writing Assistant",
+    "kicker": "CourseForge larger feature",
+    "claim": "The first phase should prove the integration path, not polish the product.",
+    "bullets": [
+      "PRD: hook, recap, exercise, rewrite modes",
+      "Tracer bullet: script text -> hook suggestion -> saved draft note",
+      "Defer full AI integration until the workflow is proven"
+    ],
+    "image": "planning.png",
+    "layout": "imageRight"
+  },
+  {
+    "title": "06 - Day 4 Feedback Loops",
+    "kicker": "Available June 8",
+    "claim": "Generated code is cheap; trusted code still needs evidence.",
+    "bullets": [
+      "Build a reusable do-work workflow",
+      "Use pre-commit for mechanical feedback",
+      "Drive behavior with red-green-refactor"
+    ],
+    "image": "feedback.png",
+    "layout": "day"
+  },
+  {
+    "title": "Feedback Example: Publishing Readiness",
+    "kicker": "CourseForge rule",
+    "claim": "A lesson cannot move to recorded unless the latest script draft is approved.",
+    "bullets": [
+      "Red: failing status-transition test",
+      "Green: minimal guard rule",
+      "Refactor: clearer status transition module"
+    ],
+    "image": "feedback.png",
+    "layout": "split"
+  },
+  {
+    "title": "07 - Day 5 AFK Agents",
+    "kicker": "Available June 8",
+    "claim": "AFK work is safe only when the task envelope is stronger than the agent's improvisation.",
+    "bullets": [
+      "Sandcastle and sandboxing reduce blast radius",
+      "Backlogs queue agent-ready tasks",
+      "GitHub Issues make work traceable"
+    ],
+    "image": "afk.png",
+    "layout": "day"
+  },
+  {
+    "title": "AFK Candidate Queue",
+    "kicker": "CourseForge backlog",
+    "claim": "Unattended tasks should be boring, bounded, and verifiable.",
+    "bullets": [
+      "Normalize empty-state copy",
+      "Generate issue drafts from accepted PRD phases",
+      "Update docs after a feature lands"
+    ],
+    "image": "afk.png",
+    "layout": "tasks"
+  },
+  {
+    "title": "08 - Day 6 HITL Patterns",
+    "kicker": "Available June 8",
+    "claim": "Humans belong at decision boundaries; agents belong on bounded execution paths.",
+    "bullets": [
+      "Classify HITL versus AFK tasks",
+      "Use research and prototypes before committing",
+      "Improve architecture for AI navigability"
+    ],
+    "image": "hitl.png",
+    "layout": "day"
+  },
+  {
+    "title": "HITL Example: Script Review UI",
+    "kicker": "Prototype before production",
+    "claim": "UI work benefits from concrete options before implementation.",
+    "bullets": [
+      "Prototype script review screen",
+      "Compare clarity, density, workflow speed, accessibility",
+      "Decide keep, change, discard"
+    ],
+    "image": "hitl.png",
+    "layout": "imageRight"
+  },
+  {
+    "title": "Capstone: Lesson Script Review Workflow",
+    "kicker": "End-to-end proof",
+    "claim": "Students demonstrate the full workflow from task definition through handoff.",
+    "bullets": [
+      "Create and approve lesson script drafts",
+      "Block recording until latest draft is approved",
+      "Run tests and produce review-ready handoff"
+    ],
+    "image": "courseforge.png",
+    "layout": "capstone"
+  },
+  {
+    "title": "Workbook Deliverables",
+    "kicker": "Proof of learning",
+    "claim": "The course is complete when students can show artifacts, not just understanding.",
+    "bullets": [
+      "One artifact from each module",
+      "One verified agent-assisted change",
+      "One bounded plan and one trusted AFK task",
+      "One final capstone handoff"
+    ],
+    "image": "workbook.png",
+    "layout": "tasks"
+  },
+  {
+    "title": "Assessment Rubric",
+    "kicker": "What good looks like",
+    "claim": "Grade the workflow, not just the code.",
+    "bullets": [
+      "Task framing: goal, scope, acceptance",
+      "Steering: repo instructions, workflows, memory",
+      "Execution: small steps, review gates, verification",
+      "Handoff: files, decisions, risks, next steps"
+    ],
+    "image": "workbook.png",
+    "layout": "split"
+  },
+  {
+    "title": "Final Takeaway",
+    "kicker": "Course close",
+    "claim": "Choose the lightest workflow that controls the actual risk.",
+    "bullets": [
+      "More autonomy requires stronger boundaries",
+      "More ambiguity requires more human judgment",
+      "Every agent claim should connect to evidence"
+    ],
+    "image": "hero.png",
+    "layout": "hero"
+  }
+]

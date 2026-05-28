@@ -1,0 +1,24 @@
+task mode: create
+primary deck-profile: engineering-platform
+secondary profile gates: course / product-platform clarity, image-led teaching moments
+required proof objects:
+- course day/module map
+- sample app build path
+- student task examples
+- feedback loop and HITL/AFK diagrams
+- capstone workflow
+source/asset requirements:
+- Use local course Markdown files under /Users/satyajitmohapatra/Documents/AICourse/course
+- Use AI Hero page only as source inspiration and cite it quietly in final/source notes
+- Generate original local bitmap illustration panels for each day
+brand authenticity constraints:
+- Do not use or recreate AI Hero logos or identity assets
+- Do not use external copyrighted imagery
+- Use original generated diagrams and abstract product screenshots
+profile-specific QA gates:
+- Every day has a clear claim and student action
+- Slide thumbnails show distinct visual rhythm
+- Text remains readable at 16:9 presentation size
+- Images are embedded, not just decorative placeholders
+known missing inputs:
+- No actual app repo exists yet; deck uses CourseForge as the sample app concept
