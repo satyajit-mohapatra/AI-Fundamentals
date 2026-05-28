@@ -1,0 +1,20 @@
+Primary local sources:
+- /Users/satyajitmohapatra/Documents/AICourse/course/README.md
+- /Users/satyajitmohapatra/Documents/AICourse/course/sample-app-courseforge.md
+- /Users/satyajitmohapatra/Documents/AICourse/course/courseforge-practice-map.md
+- /Users/satyajitmohapatra/Documents/AICourse/course/student-workbook.md
+- /Users/satyajitmohapatra/Documents/AICourse/course/video-scripts/
+
+External source reviewed:
+- AI Coding for Real Engineers, AI Hero: https://www.aihero.dev/cohorts/ai-coding-for-real-engineers-m0k0w
+
+External source details used, paraphrased:
+- Two-week cohort positioning for real production-style AI coding work
+- Middle path between over-delegating and under-delegating
+- Engineering skills: communicating, anticipating, planning, decomposing, delegating, systematizing, parallelizing
+- Course themes: tool-agnostic agent harness basics, LLM constraints, steering, PRDs, tracer bullets, feedback loops, AFK agents, HITL, research, Kanban, architecture
+- Professional course creator example inspired the local CourseForge sample app
+
+Identity assets:
+- No AI Hero or third-party logos used
+- All image panels generated locally as original bitmap diagrams
