@@ -34,6 +34,18 @@ window.AI_FUNDAMENTALS_CATALOG = [
         path: "content/learning/llm-learning-guide.md",
         kind: "Learning Guide",
         blurb: "Expands the LLMs page into system thinking, failure modes, RAG, evaluation, and safety."
+      },
+      {
+        title: "AI Engineer Roadmap Learning Guide",
+        path: "content/learning/ai-engineer-roadmap-guide.md",
+        kind: "Roadmap Guide",
+        blurb: "Turns the roadmap.sh AI Engineer topic map into a practical learning guide with examples."
+      },
+      {
+        title: "Coding Assistant Concepts",
+        path: "content/learning/coding-assistant-concepts.md",
+        kind: "Field Guide",
+        blurb: "Explains tokens, prompts, context, tools, MCP, hooks, harnesses, agents, and coding-assistant workflows."
       }
     ]
   },

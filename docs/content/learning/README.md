@@ -8,6 +8,8 @@ Use them when the summary page is too compressed and you want the reasoning, exa
 
 - `foundations-learning-guide.md`: expands the points from the Foundations page into a fuller learning document.
 - `llm-learning-guide.md`: expands the points from the LLMs page into a fuller learning document.
+- `ai-engineer-roadmap-guide.md`: expands the roadmap.sh AI Engineer topic map into a practical study guide.
+- `coding-assistant-concepts.md`: explains the core concepts behind AI coding assistants and agent harnesses.
 
 ## How to use these guides
 
