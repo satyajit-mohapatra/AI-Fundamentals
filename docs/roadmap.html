@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Fundamentals Roadmap</title>
+    <meta
+      name="description"
+      content="Suggested study order and repo organization for AI Fundamentals."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell site-header-inner">
+        <a class="brand" href="index.html"><span class="brand-mark">AI Fundamentals</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="foundations.html">Foundations</a>
+          <a href="llms.html">LLMs</a>
+          <a class="active" href="roadmap.html">Roadmap</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="shell">
+        <div class="panel content-panel">
+          <p class="eyebrow">Roadmap</p>
+          <h1>A clean path for study and repo growth</h1>
+          <p>
+            The objective is simple: keep the material readable in GitHub and in GitHub Pages,
+            while allowing the repo to grow in a controlled way.
+          </p>
+        </div>
+
+        <section class="grid two">
+          <div class="panel content-panel">
+            <h2>Suggested study order</h2>
+            <ol>
+              <li>Start with the AI and ML foundations page.</li>
+              <li>Move into LLM concepts and system design.</li>
+              <li>Add examples, diagrams, and concise glossaries.</li>
+              <li>Only then add deeper notes on tooling, RAG, and evaluation.</li>
+            </ol>
+          </div>
+
+          <div class="panel content-panel">
+            <h2>Publishing rule</h2>
+            <p>
+              Keep GitHub Pages content under <code>docs/</code>. That gives you a clean
+              deployment boundary and avoids mixing generated artifacts with reading material.
+            </p>
+          </div>
+        </section>
+
+        <section class="panel content-panel">
+          <h2>Recommended file organization</h2>
+          <ul>
+            <li><code>docs/index.html</code>: landing page</li>
+            <li><code>docs/foundations.html</code>: foundational concepts</li>
+            <li><code>docs/llms.html</code>: LLM systems and workflows</li>
+            <li><code>docs/topic-name.html</code>: future topic pages</li>
+            <li><code>docs/assets/</code>: shared CSS, diagrams, and light images</li>
+          </ul>
+        </section>
+
+        <section class="panel content-panel">
+          <h2>What not to commit</h2>
+          <ul>
+            <li>Large generated outputs</li>
+            <li>Local `node_modules` folders</li>
+            <li>Large binary exports unless they are essential primary artifacts</li>
+            <li>Scratch files from tooling workflows</li>
+          </ul>
+          <div class="callout">
+            If a file is large, generated, and not pleasant to review in a diff, it probably does
+            not belong on the main docs branch.
+          </div>
+        </section>
+
+        <section class="panel content-panel">
+          <h2>Practical next expansions</h2>
+          <ol>
+            <li>Add a glossary page and link it from the home page.</li>
+            <li>Add simple diagrams as SVG or optimized PNG assets.</li>
+            <li>Add short code examples or notebook summaries as HTML pages.</li>
+            <li>Keep heavy artifacts in Releases or external storage, not in the docs branch.</li>
+          </ol>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="shell">
+        <div class="panel footer-panel">
+          Return to the <a href="index.html">home page</a>.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

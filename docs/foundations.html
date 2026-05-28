@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Foundations</title>
+    <meta
+      name="description"
+      content="Core AI and machine learning concepts organized for easy reading."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell site-header-inner">
+        <a class="brand" href="index.html"><span class="brand-mark">AI Fundamentals</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a class="active" href="foundations.html">Foundations</a>
+          <a href="llms.html">LLMs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="shell">
+        <div class="panel content-panel">
+          <p class="eyebrow">Foundations</p>
+          <h1>Base concepts before model hype</h1>
+          <p>
+            This page keeps the first layer simple: what a model is, how data is used, and how to
+            tell whether a system is actually working.
+          </p>
+        </div>
+
+        <div class="grid two">
+          <section class="panel content-panel">
+            <h2>Core pipeline</h2>
+            <ol>
+              <li>Define the task clearly.</li>
+              <li>Collect or prepare representative data.</li>
+              <li>Train or select a model.</li>
+              <li>Run inference on new inputs.</li>
+              <li>Evaluate outputs against the real goal.</li>
+            </ol>
+          </section>
+
+          <section class="panel content-panel">
+            <h2>Essential distinctions</h2>
+            <ul>
+              <li><strong>AI</strong>: the broad field of building intelligent behavior.</li>
+              <li><strong>ML</strong>: systems that learn patterns from data.</li>
+              <li><strong>Deep learning</strong>: ML with layered neural networks.</li>
+              <li><strong>Inference</strong>: using a trained model to produce an output.</li>
+            </ul>
+          </section>
+        </div>
+
+        <section class="panel content-panel">
+          <h2>Evaluation matters more than demos</h2>
+          <p>
+            A model that looks impressive in a small demo can still fail in production. Evaluation
+            should match the actual use case: accuracy, precision and recall, latency, cost,
+            robustness, and human acceptability all matter depending on the task.
+          </p>
+          <div class="callout">
+            If the metric is detached from the real task, the system will optimize the wrong
+            thing.
+          </div>
+        </section>
+
+        <section class="grid two">
+          <div class="panel content-panel">
+            <h2>Data quality checklist</h2>
+            <ul>
+              <li>Is the data representative of real inputs?</li>
+              <li>Are labels correct and consistent?</li>
+              <li>Is there leakage from training into evaluation?</li>
+              <li>Are edge cases present or missing?</li>
+            </ul>
+          </div>
+
+          <div class="panel content-panel">
+            <h2>Good first repo additions</h2>
+            <ul>
+              <li>A page on supervised vs. unsupervised learning.</li>
+              <li>Short examples of classification and regression.</li>
+              <li>A glossary for common evaluation metrics.</li>
+              <li>A comparison note on training vs. fine-tuning vs. prompting.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="shell">
+        <div class="panel footer-panel">
+          Next: <a href="llms.html">Large Language Models</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

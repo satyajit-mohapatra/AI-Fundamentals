@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLM Fundamentals</title>
+    <meta
+      name="description"
+      content="A practical overview of large language model concepts and workflows."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell site-header-inner">
+        <a class="brand" href="index.html"><span class="brand-mark">AI Fundamentals</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="foundations.html">Foundations</a>
+          <a class="active" href="llms.html">LLMs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="shell">
+        <div class="panel content-panel">
+          <p class="eyebrow">LLMs</p>
+          <h1>How modern language systems fit together</h1>
+          <p>
+            Large language models are one layer in a broader application stack. Keeping the pieces
+            separate makes design decisions cleaner.
+          </p>
+        </div>
+
+        <div class="grid three">
+          <section class="panel content-panel">
+            <h2>Model</h2>
+            <p>
+              The base model provides pattern prediction over tokens. Its strengths and limits are
+              shaped by training data, architecture, context length, and alignment work.
+            </p>
+          </section>
+
+          <section class="panel content-panel">
+            <h2>Prompt</h2>
+            <p>
+              The prompt supplies task framing, constraints, examples, and current context. Good
+              prompting improves consistency, but it does not replace missing knowledge.
+            </p>
+          </section>
+
+          <section class="panel content-panel">
+            <h2>System</h2>
+            <p>
+              Retrieval, tools, memory, guardrails, and evaluation sit around the model. Most
+              production quality comes from this system layer.
+            </p>
+          </section>
+        </div>
+
+        <section class="grid two">
+          <div class="panel content-panel">
+            <h2>Key concepts</h2>
+            <ul>
+              <li><strong>Tokens</strong>: the text units the model consumes and generates.</li>
+              <li><strong>Context window</strong>: how much input the model can consider at once.</li>
+              <li><strong>Embeddings</strong>: vector representations used for semantic search.</li>
+              <li><strong>RAG</strong>: retrieval-augmented generation for grounding responses.</li>
+              <li><strong>Tools</strong>: external functions or APIs the model can call.</li>
+            </ul>
+          </div>
+
+          <div class="panel content-panel">
+            <h2>Practical failure modes</h2>
+            <ul>
+              <li>Hallucinated facts when the model lacks grounding.</li>
+              <li>Prompt brittleness across small phrasing changes.</li>
+              <li>Context overflow that drops important instructions.</li>
+              <li>Unreliable tool selection or bad tool arguments.</li>
+              <li>Evaluation gaps that hide regressions.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="panel content-panel">
+          <h2>Useful mental model</h2>
+          <p>
+            Treat the model like a probabilistic reasoning engine, not a source of guaranteed
+            truth. When accuracy matters, give it retrieval, tool access, explicit checks, and
+            task-specific evaluation.
+          </p>
+          <div class="callout">
+            Better prompt phrasing helps. Better system design helps more.
+          </div>
+        </section>
+
+        <section class="panel content-panel">
+          <h2>Good next pages to add</h2>
+          <ul>
+            <li>Prompting patterns with before-and-after examples.</li>
+            <li>A short RAG architecture note.</li>
+            <li>An evaluation page with task-specific scorecards.</li>
+            <li>A safety page covering data leakage and tool misuse.</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="shell">
+        <div class="panel footer-panel">
+          Continue with the <a href="roadmap.html">study roadmap</a>.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

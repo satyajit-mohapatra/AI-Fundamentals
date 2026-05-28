@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Fundamentals</title>
+    <meta
+      name="description"
+      content="A lightweight GitHub Pages site for reading and organizing AI fundamentals."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell site-header-inner">
+        <a class="brand" href="index.html"><span class="brand-mark">AI Fundamentals</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a class="active" href="index.html">Home</a>
+          <a href="foundations.html">Foundations</a>
+          <a href="llms.html">LLMs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div class="panel hero-copy">
+            <p class="eyebrow">Docs-First Repo</p>
+            <h1>Readable notes beat oversized generated assets.</h1>
+            <p>
+              This repository now favors lightweight pages, direct navigation, and topic-based
+              organization. It is structured to publish cleanly with GitHub Pages from the
+              <code>docs/</code> directory.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="foundations.html">Start with Foundations</a>
+              <a class="button secondary" href="roadmap.html">See the Study Roadmap</a>
+            </div>
+          </div>
+
+          <aside class="panel hero-side">
+            <p class="eyebrow">At A Glance</p>
+            <h2>What changed</h2>
+            <div class="pill-row">
+              <span class="pill">Large outputs removed</span>
+              <span class="pill">Pages-ready docs</span>
+              <span class="pill">Simple navigation</span>
+            </div>
+            <p>
+              The repo is positioned for notes, diagrams, examples, and short references. Keep
+              heavy generated artifacts outside the main docs branch.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <h2>Browse By Topic</h2>
+          <div class="grid three">
+            <a class="card" href="foundations.html">
+              <span class="card-kicker">Core Concepts</span>
+              <h3>AI and ML Foundations</h3>
+              <p>
+                Models, data, training, inference, evaluation, and the minimum vocabulary needed
+                to reason clearly about AI systems.
+              </p>
+            </a>
+
+            <a class="card" href="llms.html">
+              <span class="card-kicker">Modern Systems</span>
+              <h3>Large Language Models</h3>
+              <p>
+                Transformers, prompting, context windows, embeddings, retrieval, agents, and
+                where each piece fits.
+              </p>
+            </a>
+
+            <a class="card" href="roadmap.html">
+              <span class="card-kicker">Repo Structure</span>
+              <h3>Learning Roadmap</h3>
+              <p>
+                A practical reading sequence plus a recommended structure for growing this repo
+                without turning it back into an artifact dump.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell split">
+          <div class="panel content-panel">
+            <p class="eyebrow">Publishing</p>
+            <h2>GitHub Pages setup</h2>
+            <ol>
+              <li>Push the repo to GitHub.</li>
+              <li>Open repository <code>Settings</code> and then <code>Pages</code>.</li>
+              <li>Select <code>Deploy from a branch</code>.</li>
+              <li>Choose the default branch and the <code>/docs</code> folder.</li>
+              <li>Save. GitHub will publish <code>docs/index.html</code>.</li>
+            </ol>
+          </div>
+
+          <div class="panel content-panel">
+            <p class="eyebrow">Operating Rule</p>
+            <h2>Keep the repo light</h2>
+            <div class="callout">
+              Prefer notes, diagrams, code examples, and links. Avoid checking in large generated
+              outputs, local dependency trees, or bulky binary exports.
+            </div>
+            <p>
+              That keeps the site fast to load, easier to review in pull requests, and easier to
+              maintain over time.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell">
+        <div class="panel footer-panel">
+          Built for GitHub Pages from <code>/docs</code>.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
